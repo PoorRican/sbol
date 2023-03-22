@@ -5,10 +5,10 @@ pub trait Feature {
     /// Describes the purpose or potential function in the context of its parent `Component`.
     ///
     /// If the `role` for a `SubComponent` is left unspecified, then the `role` is determined by
-    /// the `role` property of the `Component` that it is an `instance_of`. 
+    /// the `role` property of the `Component` that it is an `instance_of`.
     ///
     fn role(&self) -> &Vec<Url>;
-    
+
     fn orientation(&self) -> &Vec<Url>;
 }
 

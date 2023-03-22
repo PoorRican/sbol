@@ -3,9 +3,9 @@ extern crate url;
 mod component;
 mod feature;
 mod identified;
+pub mod ontologies;
 mod sequence;
 mod toplevel;
-pub mod ontologies;
 
 pub use component::Component;
 pub use feature::*;

@@ -1,13 +1,11 @@
 use url::Url;
 
-
 /// Base interface implementations for Identified class.
 ///
 /// This interface is used to derive (either directly or indirectly) all other SBOL objects. This
 /// allows objects to be uniquely identified using URI's and referenced from within a SBOL document
 /// or at locations on the web.
 pub trait Identified {
-
     /// Intermediate between URI and name property
     ///
     /// This is equivalent to "displayId" as per the SBOL specification.
@@ -28,7 +26,7 @@ pub trait Identified {
 
     /// Thorough text description.
     fn description(&self) -> Option<String>;
-    
+
     /// One or more non-SBOL resources or Identified objects from which this object was derived.
     ///
     /// An Identified object must not refer to itself via its own `derived_from` property, or form

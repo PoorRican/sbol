@@ -18,7 +18,7 @@ pub struct Sequence {
     ///
     /// Should be a URI indentifying from the textual format branch of the EDAM ontology.
     ///
-    /// It is optional, unless `elements` is set, in that case is required. 
+    /// It is optional, unless `elements` is set, in that case is required.
     ///
     /// A partial list of possible URI values:
     ///     *============================================================*

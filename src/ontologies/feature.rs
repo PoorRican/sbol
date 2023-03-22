@@ -1,6 +1,6 @@
 use url::Url;
 
-use super::{Ontology, SO_NS, SBOL3_NS, INVALID_URI,};
+use super::{Ontology, INVALID_URI, SBOL3_NS, SO_NS};
 
 pub enum Orientation {
     /// The region specified by this `Feature` or `Location` is on the `elements` of a `Sequence`
@@ -24,12 +24,11 @@ impl Ontology for Orientation {
     }
 }
 
-
 #[cfg(test)]
 mod tests {
     use url::Url;
 
-    use crate::ontologies::{Orientation, Ontology};
+    use crate::ontologies::{Ontology, Orientation};
 
     #[test]
     fn test_inline() {

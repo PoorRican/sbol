@@ -1,6 +1,6 @@
 use url::Url;
 
-use crate::ontologies::{ComponentTypeOntology, TopologyOntology, ComponentRole};
+use crate::ontologies::{ComponentRole, ComponentTypeOntology, TopologyOntology};
 use crate::Sequence;
 
 pub enum ComponentType {
@@ -32,7 +32,7 @@ pub trait Component {
     /// Chemical Entities of Biological interest (ChEBI). In order to maximize the compatability of
     /// designs, the `type` property of a `Component` should contain a `URI` from the physical
     /// entity representation branch of the SBO. Any `Component` that can be well-described by one
-    /// of the terms below must use that term as a `type`. 
+    /// of the terms below must use that term as a `type`.
     ///
     /// Partial list:
     /// DNA     => https://identifiers.org/SBO:0000251
@@ -44,7 +44,7 @@ pub trait Component {
     ///
     /// If the `type` property contains multiple URIs, then they must identify non-conflicting
     /// terms (otherwise, it might not be clear how to interpret them, ie: RNA + DNA).
-    /// 
+    ///
     /// ## Nucleic Acid Topolgy types
     /// Any `Component` classified as DNA is recommended to encode circular/linear topology
     /// information in an additional `type` field. This (topology) `type` field should specify a
@@ -100,7 +100,7 @@ pub trait Component {
     /// | Effector             | http://identifiers.org/CHEBI:35224 | Small Molecule    |
     /// | Transcription Factor | http://identifiers.org/GO:0003700  | Protein           |
     /// =================================================================================
-    /// 
+    ///
     /// Any component that can be well described by one of the above must use the URI for that term
     /// as a `role`.
     fn role(&self) -> Vec<ComponentRole>;
@@ -139,7 +139,7 @@ pub trait Component {
     /// also subject to any restructions on the positions of the `Feature` objects in the hierarchy
     /// that are imposed by the `SubComponent`, `SequenceFeature`, or `Constraint` objects
     /// contained by the `Component` objects in the hierarchy.
-    /// 
+    ///
     /// For example, in a plasmid `Component` with a promoter `SubComponent`, the sequence at the
     /// promoter's `Location` within the plasmid should be the sequence for the promoter. More
     /// concretely, consider the DNA `Component` that refers to a `Sequence` with an IUPAC DNA
